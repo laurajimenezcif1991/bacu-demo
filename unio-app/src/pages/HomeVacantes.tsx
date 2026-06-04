@@ -369,6 +369,7 @@ export default function HomeVacantes() {
             style={{
               display: 'grid',
               gridTemplateColumns: '40px 100px 1fr 180px 90px 1fr 70px 70px 120px',
+              columnGap: '12px',
               padding: '0 20px',
               height: '48px',
               alignItems: 'center',
@@ -418,6 +419,7 @@ export default function HomeVacantes() {
                   style={{
                     display: 'grid',
                     gridTemplateColumns: '40px 100px 1fr 180px 90px 1fr 70px 70px 120px',
+              columnGap: '12px',
                     padding: '0 20px',
                     height: '60px',
                     alignItems: 'center',
@@ -551,6 +553,7 @@ function TableRow({ vacante, selected, onSelect, onClick }: TableRowProps) {
       style={{
         display: 'grid',
         gridTemplateColumns: '40px 100px 1fr 180px 90px 1fr 70px 70px 120px',
+              columnGap: '12px',
         padding: '14px 20px',
         minHeight: '60px',
         alignItems: 'center',
