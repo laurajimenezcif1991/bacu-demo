@@ -142,7 +142,7 @@ export default function Sidebar({ activeItem }: SidebarProps) {
       <div style={{ padding: '20px 20px 16px' }}>
         <img
           src={companyLogoUrl || assetUrl('/logo-bacu.png')}
-          alt={companyName || 'Comfandi'}
+          alt={companyName || 'Bacu'}
           style={{ maxHeight: '56px', maxWidth: '168px', width: 'auto', height: 'auto', display: 'block', objectFit: 'contain' }}
         />
       </div>

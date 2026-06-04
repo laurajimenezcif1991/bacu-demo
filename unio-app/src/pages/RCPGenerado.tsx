@@ -17,15 +17,15 @@ function getContexto(cargo: string): { priorities: string[]; autonomy: string } 
     autonomy: 'Media',
   };
   if (c.includes('odonto')) return {
-    priorities: ['Atención pediátrica preventiva con excelencia clínica', 'Educación en salud oral a familias de la red Comfandi', 'Reducir incidencia de caries en grupo 0-6 años en 20%'],
+    priorities: ['Atención pediátrica preventiva con excelencia clínica', 'Educación en salud oral a familias de la red Bacu', 'Reducir incidencia de caries en grupo 0-6 años en 20%'],
     autonomy: 'Media',
   };
   if (c.includes('bdm') || c.includes('business') || c.includes('comercial')) return {
-    priorities: ['Captar 12+ empresas afiliadas nuevas en el semestre', 'Crecer cartera de cuentas activas en 30%', 'Posicionar servicios Comfandi en sector empresarial del Valle'],
+    priorities: ['Captar 12+ empresas afiliadas nuevas en el semestre', 'Crecer cartera de cuentas activas en 30%', 'Posicionar servicios Bacu en sector empresarial del Valle'],
     autonomy: 'Alta',
   };
   return {
-    priorities: ['Cumplir los indicadores del área asignada', 'Fortalecer la calidad del servicio al afiliado', 'Apoyar la estrategia de bienestar de Comfandi'],
+    priorities: ['Cumplir los indicadores del área asignada', 'Fortalecer la calidad del servicio al afiliado', 'Apoyar la estrategia de bienestar de Bacu'],
     autonomy: 'Media',
   };
 }

@@ -53,7 +53,7 @@ function buildOpening(firstName: string, jobTitle: string): WaMsg[] {
     return `${d.getHours().toString().padStart(2, '0')}:${d.getMinutes().toString().padStart(2, '0')}`;
   };
   return [
-    { from: 'alex', time: fmt(0), text: `¡Hola ${firstName}! 👋 Soy *Alex*, asistente de talento de Comfandi.` },
+    { from: 'alex', time: fmt(0), text: `¡Hola ${firstName}! 👋 Soy *Alex*, asistente de talento de Bacu.` },
     { from: 'alex', time: fmt(1), text: `🎉 ¡Felicitaciones! Has avanzado a la etapa de *Entrevistas* para el cargo de *${jobTitle}*. El equipo quedó muy impresionado con tu perfil.` },
     { from: 'alex', time: fmt(2), text: 'Nos gustaría conocerte mejor en una conversación de 30–40 minutos con nuestro equipo de selección. ¿Tienes disponibilidad para esta semana?' },
     { from: 'alex', time: fmt(3), text: '¿Prefieres una franja en la *mañana (AM)* o en la *tarde (PM)*? 🗓️' },
@@ -314,7 +314,7 @@ export default function WhatsAppAgendarEntrevistaModal({
                     Agendar entrevista por WhatsApp
                   </div>
                   <div style={{ fontSize: '13px', color: '#666', marginTop: '1px' }}>
-                    Alex IA · Comfandi Talent
+                    Alex IA · Bacu Talent
                   </div>
                 </div>
                 <button onClick={onClose} style={{ background: 'none', border: 'none', cursor: 'pointer', color: '#999', padding: '4px' }}>
@@ -434,7 +434,7 @@ export default function WhatsAppAgendarEntrevistaModal({
                   </div>
                   <div style={{ flex: 1 }}>
                     <div style={{ fontWeight: 700, fontSize: '14px', color: '#fff' }}>
-                      Alex IA · Comfandi Talent
+                      Alex IA · Bacu Talent
                     </div>
                     <div style={{ fontSize: '12px', color: 'rgba(255,255,255,0.8)' }}>
                       {isDone

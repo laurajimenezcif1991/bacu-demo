@@ -103,7 +103,7 @@ function _gen(
       score: Math.round(score * 0.94),
       status: score >= 58 ? 'continua' : 'pendiente',
       resumen: hi
-        ? `${name} presenta perfil sólido para ${cfg.role} en Comfandi. Cumple los requisitos clave y tiene experiencia verificable en el sector.`
+        ? `${name} presenta perfil sólido para ${cfg.role} en Bacu. Cumple los requisitos clave y tiene experiencia verificable en el sector.`
         : md
         ? `${name} tiene formación y experiencia básica. Requiere mayor desarrollo en los requisitos críticos del cargo.`
         : `${name} presenta perfil insuficiente: experiencia y formación por debajo del umbral mínimo requerido.`,
@@ -118,7 +118,7 @@ function _gen(
 
 // ══════════════════════════════════════════════════════════════════════════════
 // VACANTE 1 — GESTOR(A) COMERCIAL CONVENIOS Y ALIANZAS CRÉDITO
-// Comfandi | Medellín | Pipeline: Entrevistas (showcase)
+// Bacu | Medellín | Pipeline: Entrevistas (showcase)
 // ══════════════════════════════════════════════════════════════════════════════
 const cfgGCA: VConfig = {
   role: 'Gestor(a) Comercial Convenios y Alianzas Crédito',
@@ -182,13 +182,13 @@ const cfgGCA: VConfig = {
     'Experiencia en diseño de campañas comerciales para ferias y eventos empresariales',
   ],
   plusLo: ['Disposición genuina para el relacionamiento empresarial y habilidad natural para la negociación'],
-  insightHi: 'combina rigor en la legalización de convenios con relacionamiento comercial sólido orientado a resultados. Perfil natural para escalar la red de libranza de Comfandi en Antioquia.',
+  insightHi: 'combina rigor en la legalización de convenios con relacionamiento comercial sólido orientado a resultados. Perfil natural para escalar la red de libranza de Bacu en Antioquia.',
   insightLo: 'presenta motivación comercial evidente pero evidencia brechas en el dominio específico de libranza y en la gestión formal de convenios empresariales requeridos para el cargo.',
   axes: [
     {
       axis: 'Orientación al resultado comercial', ideal: 84, off: 0,
       sum: 'Motor interno de prospección y cierre de acuerdos.',
-      det: 'La gestión de convenios requiere un perfil que combine persistencia en la prospección con rigurosidad en el cierre. El relacionamiento sin resultados medibles no genera valor en Comfandi.',
+      det: 'La gestión de convenios requiere un perfil que combine persistencia en la prospección con rigurosidad en el cierre. El relacionamiento sin resultados medibles no genera valor en Bacu.',
     },
     {
       axis: 'Relacionamiento empresarial', ideal: 82, off: -4,
@@ -208,7 +208,7 @@ const cfgGCA: VConfig = {
   ],
   v: [
     { title: 'Quién es conductualmente', body: 'Perfil con alta energía comercial y orientación natural al cierre de acuerdos. Combina relacionamiento cálido con rigurosidad en el seguimiento de indicadores. Su motor intrínseco de prospección define su rendimiento más que los incentivos externos.' },
-    { title: 'Fit con este rol', body: 'El Gestor Comercial de Convenios en Comfandi requiere rigor en documentación + relacionamiento activo + orientación a metas en libranza. El conocimiento del portafolio financiero de la caja es la principal curva de aprendizaje.' },
+    { title: 'Fit con este rol', body: 'El Gestor Comercial de Convenios en Bacu requiere rigor en documentación + relacionamiento activo + orientación a metas en libranza. El conocimiento del portafolio financiero de la caja es la principal curva de aprendizaje.' },
   ],
   q: [
     { tag: 'Para: Jefe de Ventas Crédito', question: '"Cuéntame el proceso de vinculación de convenio más complejo que hayas liderado. ¿Cuántas personas intervenían en la empresa cliente, cuánto duró el proceso y qué obstáculos tuviste?"', validates: 'Capacidad de gestión comercial en ciclos complejos y legalización de convenios empresariales' },
@@ -259,7 +259,7 @@ const gcaScore: Candidate[] = [
 
 // ══════════════════════════════════════════════════════════════════════════════
 // VACANTE 2 — GESTOR(A) CALIDAD DE VIDA CRÉDITO
-// Comfandi | Cali | Pipeline: Pre-screening IA (showcase)
+// Bacu | Cali | Pipeline: Pre-screening IA (showcase)
 // ══════════════════════════════════════════════════════════════════════════════
 const cfgGCV: VConfig = {
   role: 'Gestor(a) Calidad de Vida Crédito',
@@ -322,8 +322,8 @@ const cfgGCV: VConfig = {
     'Experiencia en visitas externas a empresas para venta de servicios',
     'Habilidad para comunicar beneficios de productos financieros en lenguaje simple y accesible',
   ],
-  plusLo: ['Actitud genuina de servicio y disposición para aprender el portafolio financiero de Comfandi'],
-  insightHi: 'tiene el ritmo comercial y la orientación al cliente necesarios para gestionar el portafolio de crédito de Comfandi desde el primer día. Su historial en intangibles reduce significativamente la curva de rampeo.',
+  plusLo: ['Actitud genuina de servicio y disposición para aprender el portafolio financiero de Bacu'],
+  insightHi: 'tiene el ritmo comercial y la orientación al cliente necesarios para gestionar el portafolio de crédito de Bacu desde el primer día. Su historial en intangibles reduce significativamente la curva de rampeo.',
   insightLo: 'muestra buena actitud de servicio pero evidencia brechas en la venta consultiva activa y en el seguimiento disciplinado de metas de colocación que el cargo requiere.',
   axes: [
     {
@@ -349,7 +349,7 @@ const cfgGCV: VConfig = {
   ],
   v: [
     { title: 'Quién es conductualmente', body: 'Perfil con alta orientación al cliente y buena capacidad de comunicación consultiva. Disciplinado en el seguimiento de su portafolio y motivado por el logro de metas. Genera confianza natural en la primera interacción con el afiliado.' },
-    { title: 'Fit con este rol', body: 'El Gestor de Calidad de Vida requiere empatía + disciplina en metas + dominio básico del portafolio financiero. La curva de aprendizaje en crédito hipotecario y libranza es manejable con el onboarding de Comfandi si hay base en intangibles.' },
+    { title: 'Fit con este rol', body: 'El Gestor de Calidad de Vida requiere empatía + disciplina en metas + dominio básico del portafolio financiero. La curva de aprendizaje en crédito hipotecario y libranza es manejable con el onboarding de Bacu si hay base en intangibles.' },
   ],
   q: [
     { tag: 'Para: Coordinador(a) Comercial Crédito', question: '"Cuéntame cómo gestionas un mes donde llevas 3 semanas sin cerrar una venta. ¿Qué revisas, qué cambias y cómo reactivas tu pipeline?"', validates: 'Resiliencia comercial, disciplina en seguimiento y gestión autónoma de portafolio' },
@@ -399,7 +399,7 @@ const gcvScore: Candidate[] = [
 
 // ══════════════════════════════════════════════════════════════════════════════
 // VACANTE 3 — CIENTÍFICO(A) COMPORTAMENTAL
-// Comfandi | Bogotá | Pipeline: Evaluaciones (showcase)
+// Bacu | Bogotá | Pipeline: Evaluaciones (showcase)
 // ══════════════════════════════════════════════════════════════════════════════
 const cfgCB: VConfig = {
   role: 'Científico(a) Comportamental',
@@ -463,13 +463,13 @@ const cfgCB: VConfig = {
     'Inglés avanzado para acceso directo a literatura científica y colaboración con aliados internacionales',
   ],
   plusLo: ['Curiosidad intelectual genuina y rigor metodológico como activos para el aprendizaje en el cargo'],
-  insightHi: 'combina el rigor científico con la capacidad de aterrizar hallazgos complejos a lenguaje operacional. Su experiencia en intervenciones de campo lo posiciona para escalar el modelo de acompañamiento de Comfandi.',
+  insightHi: 'combina el rigor científico con la capacidad de aterrizar hallazgos complejos a lenguaje operacional. Su experiencia en intervenciones de campo lo posiciona para escalar el modelo de acompañamiento de Bacu.',
   insightLo: 'presenta sólida formación teórica pero evidencia brechas en el diseño de pilotos en campo y en la comunicación de hallazgos a audiencias no académicas que el cargo requiere.',
   axes: [
     {
       axis: 'Rigor científico aplicado', ideal: 88, off: 0,
       sum: 'Diseño y evaluación de intervenciones con estándares científicos en contexto operativo.',
-      det: 'El Científico Comportamental en Comfandi no opera en un laboratorio académico. Aplica metodología rigurosa en contextos de alta variabilidad operativa, con recursos limitados y plazos institucionales.',
+      det: 'El Científico Comportamental en Bacu no opera en un laboratorio académico. Aplica metodología rigurosa en contextos de alta variabilidad operativa, con recursos limitados y plazos institucionales.',
     },
     {
       axis: 'Comunicación de hallazgos', ideal: 82, off: -4,
@@ -488,7 +488,7 @@ const cfgCB: VConfig = {
     { lbl: 'Innovación', off: 4 }, { lbl: 'Ética', off: 8 }, { lbl: 'Meticulosidad', off: 6 }, { lbl: 'Visión sistémica', off: 2 },
   ],
   v: [
-    { title: 'Quién es conductualmente', body: 'Perfil con rigor analítico elevado y fuerte vocación por la investigación aplicada al cambio social. Comunica con claridad y trabaja con disciplina metodológica. Su curiosidad intelectual y ética en investigación son activos centrales para el modelo de Comfandi.' },
+    { title: 'Quién es conductualmente', body: 'Perfil con rigor analítico elevado y fuerte vocación por la investigación aplicada al cambio social. Comunica con claridad y trabaja con disciplina metodológica. Su curiosidad intelectual y ética en investigación son activos centrales para el modelo de Bacu.' },
     { title: 'Fit con este rol', body: 'El Científico Comportamental necesita rigor + comunicación + trabajo colaborativo con equipos operativos. La experiencia en el sector social o de bienestar reduce significativamente la curva de adaptación al contexto de caja de compensación.' },
   ],
   q: [
@@ -567,14 +567,14 @@ export const COMFANDI_VACANTES: import('./mock').Vacante[] = [
 
 export const COMFANDI_DESCRIPTIONS: Record<string, string> = {
   'mock-comf-gca':
-    'Comfandi busca un(a) Gestor(a) Comercial de Convenios y Alianzas Crédito para gestionar el proceso comercial y administrativo de vinculación de empresas con convenio de libranza en Medellín. El cargo combina visitas comerciales a empresas potenciales, legalización y firma de convenios, profundización del portafolio financiero y monitoreo de indicadores de colocación bajo la Gerencia de Crédito de Comfandi.',
+    'Bacu busca un(a) Gestor(a) Comercial de Convenios y Alianzas Crédito para gestionar el proceso comercial y administrativo de vinculación de empresas con convenio de libranza en Medellín. El cargo combina visitas comerciales a empresas potenciales, legalización y firma de convenios, profundización del portafolio financiero y monitoreo de indicadores de colocación bajo la Gerencia de Crédito de Bacu.',
   'mock-comf-gcv':
-    'Comfandi requiere un(a) Gestor(a) Calidad de Vida Crédito para ofrecer y gestionar el portafolio de servicios financieros de la UES en Cali mediante venta consultiva. El cargo abarca líneas de crédito libranza, hipotecario y consumo, con visitas diarias a empresas afiliadas, radicación y seguimiento de créditos, gestión de base de preaprobados y cumplimiento de metas de colocación y calidad de cartera.',
+    'Bacu requiere un(a) Gestor(a) Calidad de Vida Crédito para ofrecer y gestionar el portafolio de servicios financieros de la UES en Cali mediante venta consultiva. El cargo abarca líneas de crédito libranza, hipotecario y consumo, con visitas diarias a empresas afiliadas, radicación y seguimiento de créditos, gestión de base de preaprobados y cumplimiento de metas de colocación y calidad de cartera.',
   'mock-comf-cb':
-    'Comfandi busca un(a) Científico(a) Comportamental para diseñar, implementar y evaluar estrategias basadas en ciencias del comportamiento en Bogotá. El cargo fortalece el modelo de acompañamiento a lo largo de la vida mediante diagnósticos comportamentales, pilotos iterativos basados en evidencia, transferencia metodológica a orientadores y psicólogos, y reportes técnicos para la toma de decisiones en educación, empleabilidad y desarrollo empresarial.',
+    'Bacu busca un(a) Científico(a) Comportamental para diseñar, implementar y evaluar estrategias basadas en ciencias del comportamiento en Bogotá. El cargo fortalece el modelo de acompañamiento a lo largo de la vida mediante diagnósticos comportamentales, pilotos iterativos basados en evidencia, transferencia metodológica a orientadores y psicólogos, y reportes técnicos para la toma de decisiones en educación, empleabilidad y desarrollo empresarial.',
 };
 
-export function getComfandiPipelineStages(jobId: string): import('./mock').PipelineStage[] | null {
+export function getBacuPipelineStages(jobId: string): import('./mock').PipelineStage[] | null {
   const s = (id: string, label: string, badge: string, status: StageStatus, count: number, isAI: boolean): PipelineStage =>
     ({ id, label, stageBadge: badge, status, candidateCount: count, isAI, route: `/pipeline/${jobId}/${id}` });
 

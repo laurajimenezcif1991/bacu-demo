@@ -316,7 +316,7 @@ export default function Shortlist() {
                 {/* No negociables */}
                 <SectionHeader icon={<AlertTriangle size={13} />} label="No negociables" />
                 <div style={{ marginBottom: '12px', display: 'flex', flexDirection: 'column', gap: '4px' }}>
-                  {/* FinalistCard with explicit noNeg list (Comfandi vacancies) */}
+                  {/* FinalistCard with explicit noNeg list (Bacu vacancies) */}
                   {(candidate as typeof candidate & { noNeg?: string[] }).noNeg
                     ? (candidate as typeof candidate & { noNeg: string[] }).noNeg.map((req, i) => (
                         <div key={i} style={{ display: 'flex', alignItems: 'flex-start', gap: '6px', fontSize: '12px', color: 'var(--color-text-muted)' }}>

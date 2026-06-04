@@ -50,7 +50,7 @@ function buildConversation(firstName: string, jobTitle: string, aspiration: stri
   };
   return [
     // 0-1 Apertura
-    { from: 'alex',      time: fmt(0),  text: `Hola ${firstName}! 👋 Soy *Alex*, asistente de talento de Comfandi. Tu perfil quedó bien ranqueado para *${jobTitle}*. ¿Tienes unos 10 minutos?` },
+    { from: 'alex',      time: fmt(0),  text: `Hola ${firstName}! 👋 Soy *Alex*, asistente de talento de Bacu. Tu perfil quedó bien ranqueado para *${jobTitle}*. ¿Tienes unos 10 minutos?` },
     { from: 'candidate', time: fmt(1),  text: '¡Hola! Claro, con gusto 😊' },
     // 2-3 Rompe-hielo
     { from: 'alex',      time: fmt(2),  text: '¡Perfecto!... Antes de entrar en lo del cargo, cuéntame un poco de ti más allá de lo profesional. ¿Qué te gusta hacer?' },
@@ -59,7 +59,7 @@ function buildConversation(firstName: string, jobTitle: string, aspiration: stri
     { from: 'alex',      time: fmt(4),  text: '¡Qué bueno!... ¿Y laboralmente, estás trabajando actualmente o en qué estás?' },
     { from: 'candidate', time: fmt(5),  text: 'Sí, trabajo actualmente como Research Manager en IPA Colombia.' },
     // 6-7 Contexto empresa + negociable (ciudad)
-    { from: 'alex',      time: fmt(6),  text: `Mira, Comfandi acompaña a sus afiliados a lo largo de toda su vida... Para este rol necesitamos a alguien que diseñe intervenciones conductuales para mejorar hábitos y bienestar. El cargo es presencial en Bogotá, ¿eso te funciona?` },
+    { from: 'alex',      time: fmt(6),  text: `Mira, Bacu acompaña a sus afiliados a lo largo de toda su vida... Para este rol necesitamos a alguien que diseñe intervenciones conductuales para mejorar hábitos y bienestar. El cargo es presencial en Bogotá, ¿eso te funciona?` },
     { from: 'candidate', time: fmt(7),  text: '¡Me suena muy bien! Estoy en Bogotá sin problema ✅' },
     // 8-9 Must-haves: herramientas
     { from: 'alex',      time: fmt(8),  text: '¿Y con qué metodologías o herramientas has trabajado más en tus proyectos?' },
@@ -247,7 +247,7 @@ export default function WhatsAppPreEntrevistaModal({ isOpen, onClose, candidates
                     Pre-entrevista IA por WhatsApp
                   </div>
                   <div style={{ fontSize: '13px', color: '#666', marginTop: '1px' }}>
-                    Alex IA · Comfandi Talent
+                    Alex IA · Bacu Talent
                   </div>
                 </div>
                 <button onClick={onClose} style={{ background: 'none', border: 'none', cursor: 'pointer', color: '#999', padding: '4px', borderRadius: '8px' }}>
@@ -374,7 +374,7 @@ export default function WhatsAppPreEntrevistaModal({ isOpen, onClose, candidates
                   </div>
                   <div style={{ flex: 1 }}>
                     <div style={{ fontWeight: 700, fontSize: '14px', color: '#fff' }}>
-                      Alex IA · Comfandi Talent
+                      Alex IA · Bacu Talent
                     </div>
                     <div style={{ fontSize: '12px', color: 'rgba(255,255,255,0.8)' }}>
                       {isDone ? '✓ Entrevista completada' : isTyping ? (typingFor === 'alex' ? 'escribiendo...' : `${firstName} está escribiendo...`) : 'en línea'}
