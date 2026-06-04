@@ -23,10 +23,8 @@ export const DEFAULT_MOCK_PROGRESS: Record<string, MockStageKey> = {
   'mock-th':       'entrevistas',
   'mock-finanzas': 'evaluaciones',
   'mock-ventas':   'evaluaciones',
-  // Comfandi vacancies — default unlocked stage
-  'mock-comf-gca': 'evaluaciones',
-  'mock-comf-gcv': 'evaluaciones',
-  'mock-comf-cb':  'evaluaciones',
+  // Bacu vacancies — default unlocked stage
+  'bacu-mesero-med': 'evaluaciones',
 };
 
 interface MockStageData {

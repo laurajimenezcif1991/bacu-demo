@@ -268,10 +268,8 @@ export default function Shortlist() {
                         }
                         // Pre-defined mock finalists: map card id to real mock candidate id
                         const mockIdMaps: Record<string, Record<string, string>> = {
-                          'mock-ventas':    { f1: 'mv-1', f2: 'mv-2', f3: 'mv-3' },
-                          'mock-comf-gca':  { 'gca-f1': 'gca-1', 'gca-f2': 'gca-2' },
-                          'mock-comf-gcv':  { 'gcv-f1': 'gcv-1', 'gcv-f2': 'gcv-2' },
-                          'mock-comf-cb':   { 'cb-f1': 'cb-1', 'cb-f2': 'cb-2' },
+                          'mock-ventas':      { f1: 'mv-1', f2: 'mv-2', f3: 'mv-3' },
+                          'bacu-mesero-med':  { 'mes-f1': 'mes-1', 'mes-f2': 'mes-2' },
                         };
                         const mockIdMap = mockIdMaps[jobId] ?? {};
                         const mockCandidateId = mockIdMap[candidate.id] ?? candidate.id;

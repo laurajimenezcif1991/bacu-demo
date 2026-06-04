@@ -28,7 +28,7 @@ export function useVacantes(): UseVacantesResult {
   useEffect(() => {
     if (!token) {
       setLogoUrl(assetUrl('/logo-bacu.png'));
-      setCompanyName('Comfandi');
+      setCompanyName('Bacu');
       setVacantes([...MOCK_VACANTES]);
       setLoading(false);
       return;
@@ -44,7 +44,7 @@ export function useVacantes(): UseVacantesResult {
         const jobs = data.jobs ?? [];
         setRawJobs(jobs);
         setLogoUrl(assetUrl('/logo-bacu.png'));
-        setCompanyName('Comfandi');
+        setCompanyName('Bacu');
         const mapped = jobs
           .filter((j) => !j.title?.toLowerCase().includes('supervisor de almac'))
           .flatMap(mapJobToVacantes);
@@ -54,7 +54,7 @@ export function useVacantes(): UseVacantesResult {
         if (cancelled) return;
         setError(err instanceof Error ? err.message : 'Error al cargar vacantes');
         setLogoUrl(assetUrl('/logo-bacu.png'));
-        setCompanyName('Comfandi');
+        setCompanyName('Bacu');
         setVacantes([...MOCK_VACANTES]);
       })
       .finally(() => {

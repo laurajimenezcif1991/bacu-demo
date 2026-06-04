@@ -9,6 +9,17 @@
 
 ---
 
+## [bacu-mock] — 03 Jun 2026
+
+### Vacantes y datos mock Bacu
+- Crear `mock-bacu.ts`: 10 vacantes del sector restaurantes. Vacante principal "Mesero/Polifuncional" Medellín con pipeline completo (30 candidatos: 3 en Pruebas, 5 en Entrevistas, 22 en Scoring), VConfig con no-negociables, logros, señales, prueba psicológica y preguntas de entrevista adaptadas al sector gastronómico
+- Actualizar `mock.ts`: reemplazar imports y exports de `mock-comfandi` por `mock-bacu`; actualizar `mockFinalistCards`, `mockCandidatesByStage`, `mockCandidatesById` y `mockTechFeedback` con datos de Bacu
+- Actualizar `useMockStageState.ts`: reemplazar stages de vacantes Comfandi por `bacu-mesero-med`
+- Actualizar `useVacantes.ts`: `companyName` → 'Bacu'
+- Actualizar `Shortlist.tsx`: mapeo de finalistas actualizado a IDs de mesero
+
+---
+
 ## [bacu-init] — 03 Jun 2026
 
 ### Branding Bacu

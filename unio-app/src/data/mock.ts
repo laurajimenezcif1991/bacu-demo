@@ -2072,20 +2072,20 @@ const venScoreOnly: Candidate[] = [
 // ══════════════════════════════════════════════════════════════════════════════
 
 import {
-  COMFANDI_VACANTES,
-  COMFANDI_DESCRIPTIONS,
-  getComfandiPipelineStages,
-  COMFANDI_CANDIDATES_BY_STAGE,
-  COMFANDI_ALL_CANDIDATES,
-  gcaEval, gcvEval, cbEval,
-} from './mock-comfandi';
+  BACU_VACANTES,
+  BACU_DESCRIPTIONS,
+  getBacuPipelineStages,
+  BACU_CANDIDATES_BY_STAGE,
+  BACU_ALL_CANDIDATES,
+  mesEval,
+} from './mock-bacu';
 
 export const MOCK_VACANTES: Vacante[] = [
-  ...COMFANDI_VACANTES,
+  ...BACU_VACANTES,
 ];
 
 export const MOCK_DESCRIPTIONS: Record<string, string> = {
-  ...COMFANDI_DESCRIPTIONS,
+  ...BACU_DESCRIPTIONS,
 };
 
 export function getMockPipelineStages(jobId: string): PipelineStage[] {
@@ -2134,8 +2134,8 @@ export function getMockPipelineStages(jobId: string): PipelineStage[] {
         s('finalistas',   'Finalistas',         'Finalistas',    'in_progress',  3, false),
       ];
   }
-  const comfStages = getComfandiPipelineStages(jobId);
-  if (comfStages) return comfStages;
+  const bacuStages = getBacuPipelineStages(jobId);
+  if (bacuStages) return bacuStages;
   return [
     s('scoring',      'Scoring IA',        'Scoring',       'not_started', 0, true),
     s('prescreening', 'Pre-entrevista IA',  'Pre screening', 'not_started', 0, true),
@@ -2151,7 +2151,7 @@ export const mockCandidatesByStage: Record<string, Partial<Record<string, Candid
   'mock-th':       { scoring: [...thEntrevistasCandidates, ...thPreCandidates, ...thScoreOnly], prescreening: [...thEntrevistasCandidates, ...thPreCandidates], entrevistas: thEntrevistasCandidates },
   'mock-finanzas': { scoring: [...finEvalCandidates, ...finEntrevistasCandidates, ...finPreCandidates, ...finScoreOnly], prescreening: [...finEvalCandidates, ...finEntrevistasCandidates, ...finPreCandidates], entrevistas: [...finEvalCandidates, ...finEntrevistasCandidates], evaluaciones: finEvalCandidates },
   'mock-ventas':   { scoring: [...venFinalistCandidates, ...venEvalCandidates, ...venEntrevistasCandidates, ...venPreCandidates, ...venScoreOnly], prescreening: [...venFinalistCandidates, ...venEvalCandidates, ...venEntrevistasCandidates, ...venPreCandidates], entrevistas: [...venFinalistCandidates, ...venEvalCandidates, ...venEntrevistasCandidates], evaluaciones: [...venFinalistCandidates, ...venEvalCandidates] },
-  ...COMFANDI_CANDIDATES_BY_STAGE,
+  ...BACU_CANDIDATES_BY_STAGE,
 };
 
 export const mockCandidatesById: Record<string, Candidate> = [
@@ -2160,7 +2160,7 @@ export const mockCandidatesById: Record<string, Candidate> = [
   ...thEntrevistasCandidates, ...thPreCandidates, ...thScoreOnly,
   ...finEvalCandidates, ...finEntrevistasCandidates, ...finPreCandidates, ...finScoreOnly,
   ...venFinalistCandidates, ...venEvalCandidates, ...venEntrevistasCandidates, ...venPreCandidates, ...venScoreOnly,
-  ...COMFANDI_ALL_CANDIDATES,
+  ...BACU_ALL_CANDIDATES,
 ].reduce<Record<string, Candidate>>((acc, c) => { acc[c.id] = c; return acc; }, {});
 
 // ─── Mock Tech Test Feedback ──────────────────────────────────────────────────
@@ -2176,8 +2176,10 @@ export const mockTechFeedback: Record<string, TechTestFeedback> = {
   'mv-3': { ratings: { dominio: 4, resolucion: 5, calidad: 5, comunicacion: 4, iniciativa: 5 }, destacados: 'Estrategia comercial sólida con diferenciación clara por segmento. Usó datos del mercado para fundamentar proyecciones y propuso indicadores de seguimiento muy prácticos.', senalAlerta: 'La estrategia de pricing fue conservadora; validar disposición para negociaciones de margen en cuentas estratégicas.', recomendacion: 'avanzar', files: [] },
   'mv-4': { ratings: { dominio: 4, resolucion: 4, calidad: 4, comunicacion: 5, iniciativa: 4 }, destacados: 'Buen manejo del caso comercial con foco en relacionamiento y fidelización. Identificó oportunidades de cross-selling con sustento cuantitativo relevante.', senalAlerta: 'La propuesta de expansión a nuevos territorios carece de análisis de viabilidad financiera.', recomendacion: 'avanzar_reservas', files: [] },
   'mv-5': { ratings: { dominio: 4, resolucion: 4, calidad: 4, comunicacion: 4, iniciativa: 4 }, destacados: 'Estrategia comercial coherente con el mercado objetivo. Buen análisis de competencia y propuesta de valor diferenciada para el segmento industrial de distribución.', senalAlerta: 'La gestión de equipo propuesta es reactiva; desarrollar metodología más estructurada de coaching y seguimiento.', recomendacion: 'avanzar_reservas', files: [] },
-  // Comfandi GCA — Prueba técnica: simulación de gestión de convenios
-  'gca-1': { ratings: { dominio: 5, resolucion: 5, calidad: 4, comunicacion: 5, iniciativa: 4 }, destacados: 'Resolvió el caso de gestión de convenio con precisión metodológica: identificó los puntos de bloqueo en la legalización, propuso ajustes al proceso administrativo y diseñó un plan de seguimiento con indicadores de cumplimiento por etapa. La simulación de visita comercial fue convincente y orientada al resultado.', senalAlerta: 'El análisis de indicadores de cartera complementaria fue básico; reforzar en la inducción.', recomendacion: 'avanzar', files: [] },
+  // Bacu Mesero/Polifuncional — Prueba técnica: simulación de turno de servicio
+  'mes-1': { ratings: { dominio: 5, resolucion: 5, calidad: 5, comunicacion: 5, iniciativa: 4 }, destacados: 'Excelente manejo del caso de simulación de turno: gestionó hasta 8 mesas simultáneas, priorizó correctamente la atención y resolvió la queja del cliente con protocolo adecuado y calidez. La operación de barra fue fluida y demostró conocimiento de la carta de bebidas calientes.', senalAlerta: 'En el pico de demanda simulado tardó en pedir apoyo al equipo; reforzar la comunicación proactiva con cocina.', recomendacion: 'avanzar', files: [] },
+  'mes-2': { ratings: { dominio: 4, resolucion: 5, calidad: 5, comunicacion: 5, iniciativa: 4 }, destacados: 'Muy buen desempeño en la simulación de servicio en mesa. Actitud natural de calidez con el cliente y manejo correcto de la caja POS. La preparación de bebidas estuvo dentro del estándar esperado para el nivel del cargo.', senalAlerta: 'El manejo del tiempo en hora pico podría mejorar con práctica; se sugiere acompañamiento los primeros turnos.', recomendacion: 'avanzar', files: [] },
+  'mes-3': { ratings: { dominio: 4, resolucion: 4, calidad: 4, comunicacion: 4, iniciativa: 4 }, destacados: 'Buen manejo de la simulación de servicio con buena presentación personal y actitud de servicio. Manejo básico de caja sin errores en el ejercicio. Interacción con el cliente simulado fue amable y resolutiva.', senalAlerta: 'La operación de máquina espresso requiere práctica adicional; no ha tenido experiencia previa en barismo.', recomendacion: 'avanzar_reservas', files: [] },
   'gca-2': { ratings: { dominio: 5, resolucion: 4, calidad: 5, comunicacion: 4, iniciativa: 5 }, destacados: 'Caso de gestión de convenio resuelto con foco en la profundización del portafolio. Identificó oportunidades de cross-selling dentro del mismo convenio y propuso indicadores de actividad comercial por empresa vinculada. Simulación de prospección empresarial muy bien estructurada.', senalAlerta: 'La gestión administrativa del proceso de legalización fue menos detallada que la parte comercial.', recomendacion: 'avanzar', files: [] },
   'gca-3': { ratings: { dominio: 4, resolucion: 4, calidad: 4, comunicacion: 5, iniciativa: 4 }, destacados: 'Análisis del caso de convenio correcto con buena comprensión del proceso administrativo. Propuesta de seguimiento de indicadores coherente con los objetivos del cargo. Comunicación clara y estructurada en la presentación del caso.', senalAlerta: 'La estrategia de profundización del portafolio fue reactiva más que proactiva; reforzar en la inducción.', recomendacion: 'avanzar_reservas', files: [] },
   // Comfandi GCV — Prueba técnica: simulación de atención de crédito
@@ -2201,17 +2203,9 @@ export const mockFinalistCards: Record<string, ReturnType<typeof _toFinCard>[]> 
     _toFinCard(venFinalistCandidates[1], 'f2', "$14M / $15M", 'Remoto', [{label:'Apertura de mercados',score:90},{label:'Cuentas clave',score:92},{label:'Estrategia comercial',score:87}], 'Relacionamiento estratégico, alta energía comercial y foco en el cliente.', true),
     _toFinCard(venFinalistCandidates[2], 'f3', "$13M / $14M", 'Remoto', [{label:'Pipeline management',score:88},{label:'Negociación',score:89},{label:'Desarrollo de equipo',score:85}], 'Disciplina comercial, constancia y construcción de equipos de alto rendimiento.', true),
   ],
-  'mock-comf-gca': [
-    _toFinCard(gcaEval[0], 'gca-f1', "$5'800.000 / $6'200.000", 'Presencial Medellín', [{label:'Gestión de convenios',score:92},{label:'Profundización de portafolio',score:89},{label:'Relacionamiento empresarial',score:91}], 'Disciplina comercial, visión de largo plazo y orientación a la calidad de la relación con la empresa vinculada.', true, ['Mín. VIII semestre en Administración, Mercadeo o tecnólogo afín', 'Mínimo 3 años en crédito de libranza en sector financiero o cooperativo', 'Experiencia en vinculación y legalización de convenios empresariales', 'Disponibilidad presencial en Medellín con visitas externas']),
-    _toFinCard(gcaEval[1], 'gca-f2', "$6'000.000 / $6'200.000", 'Presencial Medellín', [{label:'Prospección empresarial',score:88},{label:'Legalización de convenios',score:90},{label:'Indicadores de colocación',score:87}], 'Orientación al resultado, capacidad de apertura de cuentas nuevas y gestión proactiva del portafolio.', true, ['Mín. VIII semestre en Administración, Mercadeo o tecnólogo afín', 'Mínimo 3 años en crédito de libranza en sector financiero o cooperativo', 'Experiencia en vinculación y legalización de convenios empresariales', 'Disponibilidad presencial en Medellín con visitas externas']),
-  ],
-  'mock-comf-gcv': [
-    _toFinCard(gcvEval[0], 'gcv-f1', "$3'800.000 / $4'000.000", 'Presencial Cali', [{label:'Venta consultiva de crédito',score:94},{label:'Gestión de preaprobados',score:91},{label:'NPS y fidelización',score:90}], 'Enfoque en calidad de vida del afiliado, disciplina en seguimiento de portafolio y alto NPS personal.', true, ['Título técnico en carreras administrativas, mercadeo o afines', 'Mínimo 1 año en comercialización de intangibles (cualquier sector)', 'Orientación al logro con seguimiento proactivo de metas de colocación', 'Disponibilidad presencial en Cali (oficina y punto de venta)']),
-    _toFinCard(gcvEval[1], 'gcv-f2', "$4'000.000 / $4'200.000", 'Presencial Cali', [{label:'Seguimiento de cartera',score:88},{label:'Originación hasta desembolso',score:90},{label:'Cumplimiento de metas',score:87}], 'Orientación al resultado, dominio del ciclo completo de crédito y relacionamiento proactivo con clientes.', true, ['Título técnico en carreras administrativas, mercadeo o afines', 'Mínimo 1 año en comercialización de intangibles (cualquier sector)', 'Orientación al logro con seguimiento proactivo de metas de colocación', 'Disponibilidad presencial en Cali (oficina y punto de venta)']),
-  ],
-  'mock-comf-cb': [
-    _toFinCard(cbEval[0], 'cb-f1', "$5'800.000 / $6'200.000", 'Presencial Bogotá', [{label:'Metodología EAST/3B',score:95},{label:'Análisis estadístico (R)',score:93},{label:'Transferencia metodológica',score:91}], 'Rigor científico excepcional, comunicación efectiva de hallazgos y capacidad probada de transferencia metodológica a equipos operativos.', true, ['Profesional en ciencias sociales, administrativas, económicas o afines', 'Más de 3 años en investigación aplicada y experimentación en campo', 'Dominio de metodologías EAST, 3B o COMB en diseño de intervenciones', 'Disponibilidad presencial en Bogotá o municipios aledaños']),
-    _toFinCard(cbEval[1], 'cb-f2', "$6'000.000 / $6'200.000", 'Presencial Bogotá', [{label:'Diagnósticos comportamentales',score:90},{label:'Investigación aplicada',score:92},{label:'Reportes técnicos ejecutivos',score:88}], 'Perfil equilibrado entre rigor metodológico y comunicación ejecutiva, con experiencia en intervenciones de campo con medición de impacto.', true, ['Profesional en ciencias sociales, administrativas, económicas o afines', 'Más de 3 años en investigación aplicada y experimentación en campo', 'Dominio de metodologías EAST, 3B o COMB en diseño de intervenciones', 'Disponibilidad presencial en Bogotá o municipios aledaños']),
+  'bacu-mesero-med': [
+    _toFinCard(mesEval[0], 'mes-f1', '$1.705.905 + aux. transporte + alimentación', 'Presencial Medellín', [{label:'Atención en mesa y barra',score:93},{label:'Multifuncionalidad',score:90},{label:'NPS y experiencia al cliente',score:92}], 'Calidez genuina, alto ritmo de servicio y capacidad probada de multifuncionalidad en restaurantes de cadena.', true, ['Mínimo 6 meses en cargos similares', 'Disponibilidad completa turnos rotativos', 'Conocimiento máquina de café y caja', 'Actitud de servicio y trabajo en equipo']),
+    _toFinCard(mesEval[1], 'mes-f2', '$1.705.905 + aux. transporte + alimentación', 'Presencial Medellín', [{label:'Servicio al cliente',score:87},{label:'Manejo de caja POS',score:89},{label:'Trabajo en equipo',score:88}], 'Perfil equilibrado con experiencia en alta demanda y disposición para aprender rápido los estándares de Bacu.', true, ['Mínimo 6 meses en cargos similares', 'Disponibilidad completa turnos rotativos', 'Conocimiento máquina de café y caja', 'Actitud de servicio y trabajo en equipo']),
   ],
 };
 
