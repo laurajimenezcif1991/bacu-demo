@@ -66,7 +66,7 @@ export default function CandidateList() {
   }, [processId, setSelectionProcessId]);
 
   // For mock flows, use local mock data instead of API results
-  const isMock = jobId.startsWith('mock-');
+  const isMock = jobId.startsWith('mock-') || jobId.startsWith('bacu-');
 
   // Advance progressStage when navigating to a later stage — never go backwards.
   // Also seed from DEFAULT_MOCK_PROGRESS on first load so pre-seeded demo vacancies

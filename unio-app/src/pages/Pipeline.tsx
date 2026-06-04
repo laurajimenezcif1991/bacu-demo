@@ -241,7 +241,7 @@ export default function Pipeline() {
 
   // Build stages — memoized so reference is stable and doesn't cause effect loops
   const stages = useMemo((): PipelineStage[] => {
-    if (jobId.startsWith('mock-')) {
+    if (jobId.startsWith('mock-') || jobId.startsWith('bacu-')) {
       const base = getMockPipelineStages(jobId);
       // Lock Finalistas card if no finalists exist yet
       const hasFinalists =
@@ -263,7 +263,7 @@ export default function Pipeline() {
   // Derive progressStage from the highest active/completed phase and sync to context
   useEffect(() => {
     const ORDER = ['scoring', 'prescreening', 'entrevistas', 'evaluaciones'] as const;
-    if (jobId.startsWith('mock-')) {
+    if (jobId.startsWith('mock-') || jobId.startsWith('bacu-')) {
       // Use localStorage state (user may have advanced stages) or fall back to defaults
       const stored = getMockProgressStage(jobId);
       setProgressStage(stored as any);
@@ -284,7 +284,7 @@ export default function Pipeline() {
   const location = [rawJob?.location_city, rawJob?.location_country].filter(Boolean).join(', ') || null;
   const startDate = selectionProcess?.created_at ? formatDate(selectionProcess.created_at) : null;
   const totalCandidates = selectionProcess?.process_applications_count ?? rawJob?.total_job_applications ?? null;
-  const jobDescription = rawJob?.mission ?? (jobId.startsWith('mock-') ? MOCK_DESCRIPTIONS[jobId] : null) ?? null;
+  const jobDescription = rawJob?.mission ?? (jobId.startsWith('mock-') || jobId.startsWith('bacu-') ? MOCK_DESCRIPTIONS[jobId] : null) ?? null;
 
   return (
     <div style={{ display: 'flex', minHeight: '100vh', background: 'transparent' }}>

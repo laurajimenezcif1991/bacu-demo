@@ -17,7 +17,7 @@ export default function Shortlist() {
 
   const vacante = vacantes.find((v) => v.id === jobId || v.jobId === jobId);
   const vacanteTitle = vacante?.title ?? 'Product Designer';
-  const isMock = jobId.startsWith('mock-');
+  const isMock = jobId.startsWith('mock-') || jobId.startsWith('bacu-');
 
   // Prefer manually advanced finalists from localStorage; fall back to pre-defined mock cards
   const pendingFinalistIds = isMock ? getPendingCandidates(jobId, 'finalistas') : [];

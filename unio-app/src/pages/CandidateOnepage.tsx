@@ -80,7 +80,7 @@ export default function CandidateOnepage() {
   const reducedMotion = usePrefersReducedMotion();
   const { isCandidatePending } = useMockStageState();
   const { isCompleted: isWaCompleted, getResult: getWaResult, markCompleted: markWaCompleted } = useWaPrescreening();
-  const isMockJob = jobId.startsWith('mock-');
+  const isMockJob = jobId.startsWith('mock-') || jobId.startsWith('bacu-');
   const openMockCv = () => {
     if (!isMockJob) return;
     const education = MOCK_EDUCATION[candidate.role] ?? [];

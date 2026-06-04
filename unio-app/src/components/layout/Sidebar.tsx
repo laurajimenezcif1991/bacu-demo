@@ -27,7 +27,7 @@ export default function Sidebar({ activeItem }: SidebarProps) {
   const { getPendingCandidates } = useMockStageState();
 
   // For mock vacancies: Finalistas is only unlocked when there are actual finalists
-  const isMockJob = jobId.startsWith('mock-');
+  const isMockJob = jobId.startsWith('mock-') || jobId.startsWith('bacu-');
   const mockHasFinalists = isMockJob
     ? (getPendingCandidates(jobId, 'finalistas').length > 0 || (mockFinalistCards[jobId]?.length ?? 0) > 0)
     : true;
