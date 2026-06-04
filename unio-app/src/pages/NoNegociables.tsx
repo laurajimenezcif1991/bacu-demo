@@ -226,8 +226,8 @@ export default function NoNegociables() {
       >
         <div style={{ display: 'flex', alignItems: 'center', gap: '16px' }}>
           <img
-            src={assetUrl('/logo-comfandi.webp')}
-            alt="Comfandi"
+            src={assetUrl('/logo-bacu.png')}
+            alt="Bacu"
             style={{ maxHeight: '52px', maxWidth: '200px', width: 'auto', height: 'auto', objectFit: 'contain' }}
           />
           <div style={{ width: '1px', height: '32px', background: 'var(--color-border-default)' }} />

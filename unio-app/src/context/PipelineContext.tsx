@@ -28,7 +28,7 @@ const PipelineContext = createContext<PipelineContextValue>({
   setJobId: () => {},
   selectionProcessId: '',
   setSelectionProcessId: () => {},
-  companyLogoUrl: assetUrl('/logo-comfandi.webp'),
+  companyLogoUrl: assetUrl('/logo-bacu.png'),
   setCompanyLogoUrl: () => {},
   companyName: '',
   setCompanyName: () => {},
@@ -39,7 +39,7 @@ export function PipelineProvider({ children }: { children: ReactNode }) {
   const [progressStage, setProgressStage] = useState<PipelineStageKey>('scoring');
   const [jobId, setJobId] = useState<string>('v1');
   const [selectionProcessId, setSelectionProcessId] = useState<string>('');
-  const [companyLogoUrl, setCompanyLogoUrl] = useState<string>(assetUrl('/logo-comfandi.webp'));
+  const [companyLogoUrl, setCompanyLogoUrl] = useState<string>(assetUrl('/logo-bacu.png'));
   const [companyName, setCompanyName] = useState<string>('');
 
   // Finalistas unlocks when Entrevistas or later is the progress stage

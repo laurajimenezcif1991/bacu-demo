@@ -9,6 +9,16 @@
 
 ---
 
+## [bacu-init] — 03 Jun 2026
+
+### Branding Bacu
+- Copiar `bacu-png.png` a `unio-app/public/logo-bacu.png`
+- Reemplazar todas las referencias de `logo-comfandi.webp` por `logo-bacu.png` en Sidebar, MainSidebar, PipelineContext, useVacantes y páginas del wizard (CrearVacante, AnalizandoVacante, NoNegociables, CompletarRCP, CanalesPublicacion, RCPGenerado)
+- Actualizar `vite.config.ts`: base de `/comfandi-demo/` a `/bacu-demo/`
+- Agregar logo bacu a `dist/logo-bacu.png`
+
+---
+
 ## [b2ad114] — 28 May 2026
 
 ### Analytics & Reportes
