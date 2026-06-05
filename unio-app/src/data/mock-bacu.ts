@@ -124,13 +124,13 @@ const cfgMesero: VConfig = {
   role: 'Mesero / Polifuncional',
   sector: 'Restaurantes / Servicio al Cliente',
   budget: '$1.705.905 + auxilio de transporte + alimentación + bonificaciones',
-  bio: 'Perfil de servicio con mínimo 6 meses en atención en mesa, barra o caja. Disponibilidad para turnos rotativos en diferentes puntos de Medellín. Deseable conocimiento en máquina de café y manejo de caja.',
+  bio: 'Perfil de servicio con mínimo 6 meses de experiencia certificada en atención al cliente (con NIT). Edad máx. 33–34 años. Experiencia en cadena deseable pero no obligatoria. Disponibilidad para turnos rotativos en diferentes puntos de Medellín.',
   superpoder: '"Convierte cada visita al restaurante en una experiencia memorable para el cliente"',
   noNegS: [
-    { label: 'Mínimo 6 meses en cargos similares (mesero, barista, cajero, domicilios)', threshold: 78 },
-    { label: 'Disponibilidad completa para turnos rotativos (lunes a domingo)', threshold: 72 },
-    { label: 'Actitud de servicio y buena energía con el cliente', threshold: 66 },
-    { label: 'Disponibilidad para moverse entre puntos de Medellín', threshold: 60 },
+    { label: 'Mín. 6 meses de experiencia certificada en servicio al cliente (con NIT y certificable es suficiente)', threshold: 78 },
+    { label: 'Edad máx. 33–34 años', threshold: 72 },
+    { label: 'Experiencia en restaurante de cadena (deseable; no obligatorio si hay actitud y certificación)', threshold: 66 },
+    { label: 'Disponibilidad completa para turnos rotativos (lunes a domingo)', threshold: 60 },
   ],
   logrosHi: [
     'Atendió hasta 12 mesas simultáneas en turno de alta demanda con cero quejas registradas',
@@ -143,16 +143,16 @@ const cfgMesero: VConfig = {
   ],
   logrosLo: 'Experiencia en atención básica sin evidencia de multifuncionalidad ni indicadores de servicio al cliente.',
   senalesHi: [
-    'Confirmar disponibilidad real para turnos rotativos incluyendo fines de semana y festivos',
-    'Validar conocimiento de máquina de café espresso y manejo de caja POS',
+    'Verificar que la experiencia esté certificada con NIT del empleador (requisito de documentación)',
+    'Confirmar edad y disponibilidad total para turnos rotativos incluyendo festivos',
   ],
   senalesMd: [
-    'Confirmar experiencia específica en servicio en mesa vs. solo domicilios o caja',
-    'Validar disponibilidad para moverse entre puntos del área metropolitana de Medellín',
+    'Confirmar que la experiencia previa es certificable con NIT (no aplica trabajo informal)',
+    'Validar experiencia en servicio en mesa vs. solo domicilios o caja',
   ],
   senalesLo: [
-    'Sin experiencia en atención directa al cliente en punto de venta: no cumple el requisito mínimo',
-    'Perfil sin disponibilidad para turnos rotativos ni fines de semana',
+    'Sin experiencia certificada en atención al cliente: no cumple el requisito mínimo del cargo',
+    'Edad fuera del rango o sin disponibilidad para turnos rotativos',
   ],
   jobs: [
     { c: 'El Corral Medellín — Centro Comercial El Tesoro', r: 'Mesero / Cajero', d: '03/2025' },
@@ -165,24 +165,24 @@ const cfgMesero: VConfig = {
   resumenPreLo: '{name} presenta disposición para el servicio pero con menor experiencia en multifuncionalidad y atención bajo alta demanda.',
   noNegP: [
     {
-      label: 'Experiencia mínima 6 meses en cargo similar',
-      evHi: '1 año y 4 meses en atención en mesa, barra y caja en restaurantes de cadena. Manejo de POS y apertura/cierre de punto.',
-      evLo: 'Experiencia de 3 meses en domicilios; sin experiencia directa en atención en mesa ni manejo de caja.',
+      label: 'Experiencia certificada mín. 6 meses en servicio al cliente (con NIT)',
+      evHi: '1 año y 4 meses en atención en mesa, barra y caja en restaurantes de cadena. Experiencia certificable con NIT del empleador anterior.',
+      evLo: 'Experiencia de 3 meses en domicilios sin certificación laboral formal; no cuenta como experiencia certificable.',
     },
     {
-      label: 'Disponibilidad turnos rotativos lunes a domingo',
-      evHi: 'Disponibilidad inmediata y total para cualquier turno. Sin compromisos académicos ni laborales actuales.',
+      label: 'Edad máx. 33–34 años',
+      evHi: '28 años. Cumple el rango de edad requerido por el perfil operativo del cargo.',
+      evLo: '36 años. Supera el límite de edad máximo definido por el perfil del cargo.',
+    },
+    {
+      label: 'Experiencia en restaurante de cadena (deseable, no obligatorio)',
+      evHi: 'Trabajó en El Corral y Juan Valdez — experiencia directa en cadena con estándares definidos y alta demanda.',
+      evLo: 'Experiencia únicamente en restaurante familiar sin procesos estandarizados; la curva de adaptación puede ser mayor.',
+    },
+    {
+      label: 'Disponibilidad completa turnos rotativos lunes a domingo',
+      evHi: 'Disponibilidad inmediata y total para cualquier turno, incluyendo fines de semana y festivos. Sin compromisos laborales actuales.',
       evLo: 'Solo disponible en horario diurno de lunes a viernes por estudios nocturnos.',
-    },
-    {
-      label: 'Conocimiento máquina de café y manejo de caja',
-      evHi: 'Operó máquina espresso industrial y terminales POS en Juan Valdez. Recibió certificación interna de barista nivel básico.',
-      evLo: 'Sin experiencia en máquina de café. Manejo básico de caja solo en supermercado.',
-    },
-    {
-      label: 'Actitud de servicio y trabajo en equipo',
-      evHi: 'Reconocido como empleado del mes en El Corral por evaluaciones de clientes. Referencia laboral positiva verificable.',
-      evLo: 'Sin indicadores ni referencias de servicio al cliente en cargos anteriores.',
     },
   ],
   plusHi: [
