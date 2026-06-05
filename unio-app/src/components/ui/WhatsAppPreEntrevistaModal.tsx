@@ -42,7 +42,7 @@ function currentPhase(msgIdx: number): string {
   return phase;
 }
 
-function buildConversation(firstName: string, jobTitle: string, aspiration: string): WaMsg[] {
+function buildConversation(firstName: string, jobTitle: string, aspiration: string, currentRole?: string, currentCompany?: string): WaMsg[] {
   const base = new Date();
   const fmt = (offset: number) => {
     const d = new Date(base.getTime() + offset * 35_000);
@@ -57,19 +57,19 @@ function buildConversation(firstName: string, jobTitle: string, aspiration: stri
     { from: 'candidate', time: fmt(3),  text: 'Me encanta leer sobre comportamiento humano y los domingos corro en la Ciclovía 🏃' },
     // 4-5 Estado laboral → No negociables
     { from: 'alex',      time: fmt(4),  text: '¡Qué bueno!... ¿Y laboralmente, estás trabajando actualmente o en qué estás?' },
-    { from: 'candidate', time: fmt(5),  text: 'Sí, trabajo actualmente como Research Manager en IPA Colombia.' },
+    { from: 'candidate', time: fmt(5),  text: currentRole && currentCompany ? `Sí, trabajo actualmente como ${currentRole} en ${currentCompany}.` : 'Sí, estoy trabajando actualmente.' },
     // 6-7 Contexto empresa + negociable (ciudad)
-    { from: 'alex',      time: fmt(6),  text: `Mira, Bacu acompaña a sus afiliados a lo largo de toda su vida... Para este rol necesitamos a alguien que diseñe intervenciones conductuales para mejorar hábitos y bienestar. El cargo es presencial en Bogotá, ¿eso te funciona?` },
-    { from: 'candidate', time: fmt(7),  text: '¡Me suena muy bien! Estoy en Bogotá sin problema ✅' },
-    // 8-9 Must-haves: herramientas
-    { from: 'alex',      time: fmt(8),  text: '¿Y con qué metodologías o herramientas has trabajado más en tus proyectos?' },
-    { from: 'candidate', time: fmt(9),  text: 'EAST, 3B y COMB para diseño de intervenciones. SPSS/R y Power BI para análisis y reportes de impacto.' },
+    { from: 'alex',      time: fmt(6),  text: `Qué bien! Bacu opera varios puntos de servicio en Medellín y busca personas comprometidas con dar una experiencia increíble al cliente. El cargo de ${jobTitle} es presencial, con turnos rotativos. ¿Eso te funciona?` },
+    { from: 'candidate', time: fmt(7),  text: '¡Claro que sí! No tengo problema con los turnos rotativos ✅' },
+    // 8-9 Must-haves: experiencia
+    { from: 'alex',      time: fmt(8),  text: '¿Tienes experiencia en atención al cliente en mesa o caja, con empresa certificable con NIT?' },
+    { from: 'candidate', time: fmt(9),  text: 'Sí, tengo más de 8 meses en atención en mesa y caja. Todo con contrato formal y certificable 📋' },
     // 10-11 Logro clave
-    { from: 'alex',      time: fmt(10), text: 'Cuéntame de un logro del que estés orgulloso, algo relevante para este tipo de rol.' },
-    { from: 'candidate', time: fmt(11), text: 'Diseñé un piloto de ahorro conductual para 500 empleados que incrementó la cotización un 23% en 6 meses 📈' },
+    { from: 'alex',      time: fmt(10), text: 'Cuéntame de un momento en el que hayas dado un servicio que te haya hecho sentir orgulloso.' },
+    { from: 'candidate', time: fmt(11), text: 'En un turno de mucha demanda atendí 10 mesas al mismo tiempo y todos los clientes salieron satisfechos 😊' },
     // 12-13 Salario
-    { from: 'alex',      time: fmt(12), text: '¡Qué impacto!... ¿Y cuál sería tu expectativa salarial?' },
-    { from: 'candidate', time: fmt(13), text: aspiration || 'Entre $5.5M y $6M COP.' },
+    { from: 'alex',      time: fmt(12), text: '¡Qué bien!... ¿Y cuál sería tu expectativa salarial?' },
+    { from: 'candidate', time: fmt(13), text: aspiration || '$1.700.000 + auxilio de transporte.' },
     // 14-16 Cierre
     { from: 'alex',      time: fmt(14), text: `¡Estamos alineados! 🙌... ${firstName}, muchas gracias por tu tiempo. El equipo de talento estará en contacto muy pronto. ¿Tienes alguna pregunta?` },
     { from: 'candidate', time: fmt(15), text: 'No, ¡muchas gracias! Quedo pendiente 😊' },
@@ -131,7 +131,7 @@ export default function WhatsAppPreEntrevistaModal({ isOpen, onClose, candidates
   const candidate = candidates[activeIdx];
   const firstName = candidate?.name?.split(' ')[0] ?? 'Candidato';
   const messages = candidate
-    ? buildConversation(firstName, jobTitle, candidate.aspiration)
+    ? buildConversation(firstName, jobTitle, candidate.aspiration, candidate.currentRole, candidate.currentCompany)
     : [];
 
   // Scroll to bottom when new messages arrive

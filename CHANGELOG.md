@@ -9,6 +9,14 @@
 
 ---
 
+## [fix/wa-chat-bacu] — 05 Jun 2026
+
+### Fix pre-entrevista WhatsApp y tab title
+- Actualizar `index.html`: título de la pestaña de "Comfandi · Unio Demo" a "Bacu · Unio Demo"
+- Actualizar `WhatsAppPreEntrevistaModal.tsx`: reemplazar diálogo hardcodeado (Research Manager, IPA Colombia, intervenciones conductuales) por contenido dinámico usando `currentRole`/`currentCompany` del candidato y contexto correcto del rol Mesero/Polifuncional de Bacu
+
+---
+
 ## [bacu-mock] — 03 Jun 2026
 
 ### Vacantes y datos mock Bacu
