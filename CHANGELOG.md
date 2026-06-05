@@ -9,6 +9,13 @@
 
 ---
 
+## [fix/deploy-workflow] — 05 Jun 2026
+
+### Fix GitHub Pages deploy workflow
+- Reemplazar flujo `upload-artifact` + `deploy-pages` (bloqueado por environment protection rules) por `peaceiris/actions-gh-pages@v4` que hace push directo a `gh-pages`
+
+---
+
 ## [fix/wa-chat-bacu] — 05 Jun 2026
 
 ### Fix pre-entrevista WhatsApp y tab title
